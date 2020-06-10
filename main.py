@@ -1,35 +1,24 @@
-from flask import Flask, jsonify, Response, send_from_directory, request
+from flask import Flask, jsonify, send_from_directory
 import os
 
 import config
 import services.logger as logger
 
 # API Routes
-# import packages.routes.image as routes_image
+from routes.todo import todo_route
+from routes.main import main_route
 
 ENV = os.getenv('FLASK_ENV', 'production')
 
 app = Flask(__name__)
 
+# Register Routes
+app.register_blueprint(main_route)
+app.register_blueprint(todo_route)
+
+# Set logging level
 logger.set_log_level()
 
-
-@app.route('/')
-def root():
-    return jsonify({
-        'message': 'Root API'
-    })
-
-
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'resources'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
-
-
-# @app.route('/version.txt')
-# def version():
-#     with open("version.txt") as version_file:
-#         return Response(version_file.read(), mimetype='text/plain')
 
 if ENV != 'development':
     @app.errorhandler(Exception)

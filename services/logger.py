@@ -29,9 +29,3 @@ def warn(msg):
 
 def error(msg):
     log.error(msg)
-
-
-def print_timing(time_start, msg):
-    time_end = datetime.now()
-    warn("[TIME] " + msg + ": " +
-         '{0:.10f}'.format((time_end - time_start).total_seconds()))
