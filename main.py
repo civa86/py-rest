@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, send_from_directory
 import os
 
-import config
 import services.logger as logger
 from services.database import db_session
 

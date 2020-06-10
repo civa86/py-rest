@@ -14,4 +14,13 @@ class Todo(Base):
         self.done = done
 
     def __repr__(self):
-        return '<Todo %r>' % (self.task)
+        return '<Todo #ID: %r>' % (self.id)
+
+    @property
+    def serialize(self):
+        return {
+            'id': self.id,
+            'task': self.task,
+            'done': self.done,
+            'created_at': self.created_at
+        }
