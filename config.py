@@ -7,7 +7,7 @@ DEFAULT_VALUES = {
     'DB_PORT': '3306',
     'DB_USER': 'root',
     'DB_PASS': 'root',
-    'DB_NAME': 'py-rest-api'
+    'DB_NAME': 'py-rest'
 }
 
 

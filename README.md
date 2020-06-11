@@ -26,7 +26,7 @@ pip freeze > requirements.txt
 #### Run local MYSQL Database
 
 ```bash
-docker run -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=py-rest-api -p 3306:3306 mysql:5.7
+docker run -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=py-rest -p 3306:3306 mysql:5.7
 ```
 
 #### Migrate Database with Flyway
@@ -47,7 +47,7 @@ export FLASK_ENV=development && export FLASK_APP=main.py && flask run
 #### Build Image
 
 ```bash
-docker build -t py-rest-api .
+docker build -t py-rest .
 ```
 
 #### Run Image
@@ -59,7 +59,7 @@ docker run -p 5000:5000 \
            -e DB_PORT=3306 \
            -e DB_USER=root \
            -e DB_PASS=root \
-           -e DB_NAME=py-rest-api \
-        py-rest-api:latest
+           -e DB_NAME=py-rest \
+        py-rest:latest
 ```
 
