@@ -1,5 +1,5 @@
 
-Simple REST API server written in Python using Flask and SQLAlchemy
+Simple REST API written in Python using Flask and SQLAlchemy
 
 ## Pre-requisites
 
